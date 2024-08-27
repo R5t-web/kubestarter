@@ -1,5 +1,5 @@
 # On both
-Sudo apt install docker.io -y
+sudo apt install docker.io -y
 
 sudo chmod 777 /var/run/docker.sock
 
@@ -24,7 +24,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # For pod network
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml
+kubectl apply -f https://docs.projectcalico.org/v3.20/manifests/calico.yaml
 
 # NGINX ingress-Controller
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.49.0/deploy/static/provider/baremetal/deploy.yaml
